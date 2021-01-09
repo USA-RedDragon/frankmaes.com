@@ -11,6 +11,12 @@
         <meta name="description" content="Frank Maes">
     </head>
     <body>
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+        <script>
+            function onSubmit(token) {
+                document.getElementById("guest-form").submit();
+            }
+        </script>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-24">
@@ -32,6 +38,14 @@
                     <hr/>
                     <h4 class="my-accent-font text-center text-muted text-nowrap">Father. Brother. Friend.</h4>
                 </div>
+            </div>
+            <div class="row">
+                <form id="guest-form" action="https://guestbook.frankmaes.com/guestbook/add" method="POST">
+                    <button class="g-recaptcha"
+                            data-sitekey="" 
+                            data-callback='onSubmit'
+                            data-action='submit'>Submit</button>
+                </form>
             </div>
             <div class="row">
                 <div class="col-lg-10 offset-lg-7">
