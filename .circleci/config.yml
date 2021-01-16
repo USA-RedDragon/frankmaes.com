@@ -16,6 +16,10 @@ jobs:
       - run:
           name: Build Frontend
           command: npm run build
+          environment:
+            NODE_ENV: production
+            VUE_APP_API_URL: https://guestbook.frankmaes.com
+            VUE_APP_RECAPTCHA_SITE_KEY: 6LdSHCcaAAAAAF20q-EZND91gwTagvoX-LHxGIdS
 
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is 
