@@ -1,0 +1,21 @@
+{
+  "root": true,
+  "extends": [
+      "plugin:vue/vue3-essential",
+      "google"
+  ],
+  "env": {
+      "node": true
+  },
+  "rules": {
+      "comma-dangle": [2, "always-multiline"],
+      "object-curly-spacing": [ "error", "always" ],
+      "require-jsdoc": "off",
+      "max-len": [ "error", 120 ],
+      "no-unused-vars": [ "error", { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" } ],
+      "valid-jsdoc": "off"
+  },
+  "parserOptions": {
+      "parser": "babel-eslint"
+  }
+}
