@@ -93,6 +93,8 @@ export default {
             title: 'Thanks!',
             text: 'Thank you for signing the guestbook.',
           });
+          this.message = '';
+          this.name = '';
           this.fetchData();
         } else {
           this.$swal({
