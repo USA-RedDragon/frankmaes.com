@@ -2,7 +2,7 @@ version: 2
 
 jobs:
   build:
-    working_directory: /ci
+    working_directory: /tmp
     docker:
       - image: cimg/node:12.20
 
@@ -33,11 +33,11 @@ jobs:
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: /ci/dist
+          at: /tmp/dist
 
       - run:
           name: Push to S3
-          command: aws s3 sync . s3://frankmaes
+          command: aws s3 sync /tmp/dist s3://frankmaes
 
       - run:
           name: Clear Cloudfront Cache
