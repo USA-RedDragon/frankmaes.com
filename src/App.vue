@@ -81,13 +81,15 @@ export default {
         // Execute reCAPTCHA with action "submit".
         const recaptchaToken = await this.$recaptcha('submit');
 
+        const name = this.name;
+        const message = this.message;
         this.message = '';
         this.name = '';
 
         // Sign the guestbook
         const resp = await API.post('/add', {
-          name: this.name,
-          message: this.message,
+          name,
+          message,
           recaptchaToken,
         });
 
