@@ -81,6 +81,9 @@ export default {
         // Execute reCAPTCHA with action "submit".
         const recaptchaToken = await this.$recaptcha('submit');
 
+        this.message = '';
+        this.name = '';
+
         // Sign the guestbook
         const resp = await API.post('/add', {
           name: this.name,
@@ -88,15 +91,14 @@ export default {
           recaptchaToken,
         });
 
-        if (resp.data.success) {
-          this.$swal({
-            title: 'Thanks!',
-            text: 'Thank you for signing the guestbook.',
-          });
-          this.message = '';
-          this.name = '';
-          this.fetchData();
-        } else {
+        this.$swal({
+          title: 'Thanks!',
+          text: 'Thank you for signing the guestbook.',
+        });
+
+        this.fetchData();
+
+        if (!resp.data.success) {
           this.$swal({
             title: 'Error!',
             text: 'There was an error submitting. Please try again later',
@@ -107,7 +109,7 @@ export default {
         console.error(err);
       }
     },
-    fetchData() {
+    async fetchData() {
       API.get('/list').then((res) => {
         this.posts = res.data;
       }).catch((err) => {
