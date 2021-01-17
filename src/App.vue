@@ -14,8 +14,11 @@
     height="315"
     src="https://www.youtube-nocookie.com/embed/w5iyC7HU2OE"
     frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen></iframe>
+  <p>If the video won't load properly, you can <a
+    target="_blank"
+    href="https://youtu.be/w5iyC7HU2OE">view it on YouTube</a></p>
   <br>
   <h3>Slideshow</h3>
   <iframe
