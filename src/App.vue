@@ -7,6 +7,36 @@
   </picture>
   <h3>Son. Brother. Father. Friend</h3>
   <br>
+  <h2>Memorial Service</h2>
+  <h3>Video</h3>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube-nocookie.com/embed/w5iyC7HU2OE"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br>
+  <h3>Slideshow</h3>
+  <iframe
+  :src="'https://docs.google.com/presentation/d/e/' +
+'2PACX-1vSCsomiVl_89W-6YMBtxeZrVOmFCEbBdlWBPnXZoHzJ6M1t0H1g4sp-f' +
+'h8-Dbvpg-1uXXDjlqMXl6j2/embed?start=false&loop=false&delayms=5000'"
+  frameborder="0"
+  width="960"
+  height="569"
+  allowfullscreen="true" mozallowfullscreen="true"
+  webkitallowfullscreen="true"></iframe>
+  <br>
+  <h3>Music</h3>
+  <iframe
+    src="https://open.spotify.com/embed/playlist/72ANEy087haw4ns9gr2qzu"
+    width="300"
+    height="380"
+    frameborder="0"
+    allowtransparency="true"
+    allow="encrypted-media"></iframe>
+  <br>
   <h2>Guestbook</h2>
   <Form @submit="recaptcha" :validation-schema="guestbookSchema">
     <Field name="name" as="input" v-model="name" placeholder="Your name" />
