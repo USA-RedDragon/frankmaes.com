@@ -91,19 +91,19 @@ export default {
           recaptchaToken,
         });
 
-        this.$swal({
-          title: 'Thanks!',
-          text: 'Thank you for signing the guestbook.',
-        });
-
-        this.fetchData();
-
         if (!resp.data.success) {
           this.$swal({
             title: 'Error!',
             text: 'There was an error submitting. Please try again later',
             icon: 'error',
           });
+        } else {
+          this.$swal({
+            title: 'Thanks!',
+            text: 'Thank you for signing the guestbook.',
+          });
+          // Fire and forget
+          this.fetchData();
         }
       } catch (err) {
         console.error(err);
