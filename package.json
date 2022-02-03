@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/USA-RedDragon/frankmaes.com#readme",
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "core-js": "^3.6.5",
     "javascript-time-ago": "^2.3.4",
     "vee-validate": "^4.1.9",
