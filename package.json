@@ -27,7 +27,7 @@
   "homepage": "https://github.com/USA-RedDragon/frankmaes.com#readme",
   "dependencies": {
     "axios": "^0.21.1",
-    "core-js": "^3.6.5",
+    "core-js": "^3.35.0",
     "javascript-time-ago": "^2.3.4",
     "vee-validate": "^4.1.9",
     "vue": "^3.0.0",
