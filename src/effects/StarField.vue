@@ -12,17 +12,21 @@ export default {
       // 4:3:2
       // red:blue:yellow
       starColors: [
-        {
-          center: '#cfc54a',
-          outline: '#cfaf4a',
+      {
+          center: '#bf5700',
+          outline: '#f8971f',
         },
         {
-          center: '#cfc54a',
-          outline: '#cfaf4a',
+          center: '#bf5700',
+          outline: '#f8971f',
         },
         {
-          center: '#86232a',
-          outline: '#721e24',
+          center: '#bf5700',
+          outline: '#f8971f',
+        },
+        {
+          center: '#bf5700',
+          outline: '#f8971f',
         },
         {
           center: '#86232a',
