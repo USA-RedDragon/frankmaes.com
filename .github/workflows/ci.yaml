@@ -1,0 +1,48 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write      # Required for aws-actions/configure-aws-credentials
+  contents: read       # Required for actions/checkout
+
+concurrency:
+  group: '${{ github.workflow }} @ ${{ github.ref }}'
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: .node-version
+
+    - run: npm ci
+      env:
+        NODE_ENV: development
+
+    - run: npm run build
+      env:
+        NODE_ENV: production
+        VUE_APP_API_URL: https://guestbook.frankmaes.com
+        VUE_APP_RECAPTCHA_SITE_KEY: ${{ secrets.RECAPTCHA_SITE_KEY }}
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: arn:aws:iam::803205869942:role/github-actions-frankmaes.com
+        aws-region: us-east-1
+
+    - name: Push to S3
+      run: aws s3 sync dist s3://frankmaes
+
+    - name: Clear Cloudfront Cache
+      run: aws cloudfront create-invalidation --distribution-id E1ASB9DIML1ZVZ --paths "/*"
