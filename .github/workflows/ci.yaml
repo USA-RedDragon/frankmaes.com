@@ -32,8 +32,8 @@ jobs:
     - run: npm run build
       env:
         NODE_ENV: production
-        VUE_APP_API_URL: https://guestbook.frankmaes.com
-        VUE_APP_RECAPTCHA_SITE_KEY: ${{ secrets.RECAPTCHA_SITE_KEY }}
+        VITE_API_URL: https://guestbook.frankmaes.com
+        VITE_RECAPTCHA_SITE_KEY: ${{ secrets.RECAPTCHA_SITE_KEY }}
 
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v4

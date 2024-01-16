@@ -4,9 +4,9 @@
   "description": "Memorial Site for Franklin Leroy Maes",
   "main": "index.js",
   "scripts": {
-    "start": "npm run start:dev",
-    "start:dev": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "dev": "vite --host",
+    "build": "npm run build:pre && vite build",
+    "preview": "vite preview --host",
     "lint": "eslint --ext .vue,.js,.jsx,.cjs,.mjs --ignore-path .gitignore src/",
     "lint:fix": "npm run lint -- --fix",
     "lint:report": "npm run lint -- --output-file eslint_report.json --format json",
@@ -21,7 +21,7 @@
     "email": "jacob@mcswain.dev",
     "url": "https://jacob.mcswain.dev/"
   },
-  "license": "ISC",
+  "license": "",
   "bugs": {
     "url": "https://github.com/USA-RedDragon/frankmaes.com/issues"
   },
@@ -36,17 +36,13 @@
     "vue-sweetalert2": "^5.0.5"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~5.0.8",
-    "@vue/cli-plugin-eslint": "~5.0.8",
-    "@vue/cli-service": "~5.0.8",
-    "@vue/compiler-sfc": "^3.4.14",
+    "@rushstack/eslint-patch": "^1.6.1",
+    "@vitejs/plugin-vue": "^5.0.3",
     "@vue/eslint-config-prettier": "^9.0.0",
-    "@babel/eslint-parser": "^7.11.0",
     "eslint": "^8.56.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-vue": "^9.20.1",
-    "postcss": "^8.4.33",
-    "prettier": "^3.2.2"
+    "prettier": "^3.2.2",
+    "vite": "^5.0.11"
   }
 }
