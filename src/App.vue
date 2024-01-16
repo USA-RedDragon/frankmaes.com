@@ -41,7 +41,7 @@
     allow="encrypted-media"></iframe>
   <br>
   <h2>Guestbook</h2>
-  <Form @submit="recaptcha" :validation-schema="guestbookSchema">
+  <ValidateForm @submit="recaptcha" :validation-schema="guestbookSchema">
     <Field name="name" as="input" v-model="name" placeholder="Your name" />
     <ErrorMessage name="name" />
     <br />
@@ -49,7 +49,7 @@
     <ErrorMessage name="message" />
     <br />
     <button>Sign!</button>
-  </Form>
+  </ValidateForm>
   <br />
   <h2>Guestbook Submissions</h2>
   <GuestbookPost
@@ -78,7 +78,7 @@ export default {
   name: 'App',
   components: {
     Field,
-    Form,
+    ValidateForm: Form,
     ErrorMessage,
     GuestbookPost,
   },
