@@ -30,7 +30,7 @@
     "axios": "^0.27.2",
     "core-js": "^3.6.5",
     "javascript-time-ago": "^2.3.4",
-    "vee-validate": "^4.1.9",
+    "vee-validate": "^4.12.4",
     "vue": "^3.0.0",
     "vue-recaptcha-v3": "^2.0.0",
     "vue-sweetalert2": "^4.1.1"
