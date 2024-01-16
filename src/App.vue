@@ -1,9 +1,9 @@
 <template>
   <h1>Frank Maes</h1>
   <picture>
-      <source srcset="images/webp/frank.webp" type="image/webp">
-      <source srcset="images/png/frank.png" type="image/png">
-      <img src="images/png/frank.png" alt="Frank Maes">
+      <source srcset="/images/webp/frank.webp" type="image/webp">
+      <source srcset="/images/png/frank.png" type="image/png">
+      <img src="/images/png/frank.png" alt="Frank Maes">
   </picture>
   <h3>Son. Brother. Father. Friend</h3>
   <br>
