@@ -12,7 +12,7 @@ export default {
       // 4:3:2
       // red:blue:yellow
       starColors: [
-      {
+        {
           center: '#bf5700',
           outline: '#f8971f',
         },
